@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "General Sans";
+    src: local("GeneralSans"),
+      url("./assets/fonts/GeneralSans-Variable.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Inter";
+    src: local("Inter"),
+      url("./assets/fonts/Inter-Regular.ttf") format("truetype");
+  }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "General Sans";
+  background-color: white;
+}
+
+.heading {
+  font-family: 'General Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  color: #1A1A1A;
+}
+
+a {
+  text-decoration: none;
+}
+
+

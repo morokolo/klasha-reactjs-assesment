@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import './App.scss';
+
+import Dashboard from "./features/dashboard/Dashboard";
+import Balances from "./features/balances/Balances";
+import Transactions from "./features/transactions/Transactions";
+import Analytics from "./features/analytics/Analytics";
+import Marketing from "./features/marketing/Marketing";
+import ExchangeRates from "./features/exchangerates/ExchangeRates";
+import Checkout from "./features/checkout/Checkout";
+import PaymentLinks from "./features/paymentlinks/PaymentLinks";
+import Wire from "./features/wire/Wire";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+        <div className="App">
+         <BrowserRouter>
+            <Routes>
+              <Route path="/">
+                <Route index  element={<Dashboard />} />
+                  <Route path="balances"  element={<Balances />} />
+                  <Route path="transactions"  element={<Transactions />} />
+                  <Route path="analytics"  element={<Analytics />} />
+                  <Route path="marketing"  element={<Marketing />} />
+                  <Route path="exchange-rates"  element={<ExchangeRates />} />
+                  <Route path="checkout"  element={<Checkout />} />
+                  <Route path="payment-links"  element={<PaymentLinks />} />
+                  <Route path="wire"  element={<Wire />} />
+              </Route>
+            </Routes>
+         </BrowserRouter>
+        </div>
   );
 }
 

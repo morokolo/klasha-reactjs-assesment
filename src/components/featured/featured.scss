@@ -1,0 +1,39 @@
+
+.featured{
+    padding: 1rem 2rem 3rem 2rem;
+    border-radius: 1rem;
+    background: url('../../assets/lines.png'), #EF2C5A;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+  .top {
+    width: 65%;
+    p {
+        font-family: 'General Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 32px;
+        /* or 160% */
+        
+        letter-spacing: -0.02em;
+        font-feature-settings: 'ss05' on, 'ss06' on, 'liga' off;
+        
+        /* base/white */
+        
+        color: #FFFFFF;
+    }
+  }
+ 
+  .bottom {
+ 
+
+    Button {
+        background-color: #000000;
+        text-transform: none;
+    }
+  
+  }
+
+}
