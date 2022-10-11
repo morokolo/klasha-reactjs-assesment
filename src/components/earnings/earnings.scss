@@ -8,8 +8,8 @@
     padding: 2rem 0 0 0;
   
     &:hover {
-      color: #fff;
-      background-color: #000;
+      color: var(--white-color);
+      background-color:  var(--black-color);
     }
   
     .top {
@@ -31,7 +31,7 @@
           line-height: 20px;
           display: flex;
           align-items: center;
-          color: #000000;
+          color:  var(--black-color);
         }
   
       }

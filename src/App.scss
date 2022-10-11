@@ -19,7 +19,21 @@
 
 body {
   font-family: "General Sans";
-  background-color: white;
+  background-color: var(--white-color);
+  --primary-color: #EF2C5A;
+  --shade-black-color: #0A0A0A;
+  --shade-black-color-700: #484848;
+  --shade-black-color-400: #8D8D8D;
+  --shade-grey-color-700: #565C69;
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+  --shade-grey-100: #EDEDED;
+  --grey-100: #F0F0F0;
+  --klasha-white: #FFFBF7;
+  --shade-grey-50:#F7F7F7;
+  --shade-black-600: #5F5F5F;
+  --shade-grey-300: #A39D9E;
+  --shade-grey-200: #E8E8E8;
 }
 
 .heading {
@@ -29,7 +43,7 @@ body {
   font-size: 20px;
   line-height: 32px;
   letter-spacing: -0.02em;
-  color: #1A1A1A;
+  color: var(--shade-black-color);
 }
 
 a {
@@ -37,9 +51,9 @@ a {
 }
 
 .primary-btn {
-    border: 1px solid #0A0A0A !important;
+    border: 1px solid  var(--shade-black-color) !important;
     border-radius: 8px !important;
-    color: #0A0A0A !important;
+    color:  var(--shade-black-color) !important;
 }
 
 .right-margin-spacer {

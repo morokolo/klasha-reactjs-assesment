@@ -2,7 +2,7 @@
 .featured{
     padding: 1rem 2rem 3rem 2rem;
     border-radius: 1rem;
-    background: url('../../assets/lines.png'), #EF2C5A;
+    background: url('../../assets/lines.png'), var(--primary-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -22,7 +22,7 @@
         
         /* base/white */
         
-        color: #FFFFFF;
+        color: var(--white-color);
     }
   }
  
@@ -30,7 +30,7 @@
  
 
     Button {
-        background-color: #000000;
+        background-color:  var(--black-color);
         text-transform: none;
     }
   

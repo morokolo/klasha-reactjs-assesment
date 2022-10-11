@@ -1,12 +1,12 @@
 .filter {
     .currency-btn {
-        border: 1px solid #000;
-        color: #000;
+        border: 1px solid  var(--black-color);
+        color:  var(--black-color);
         text-transform: none;
       }
 
       .day-filter{
-        color: #000;
+        color:  var(--black-color);
         text-transform: none;
         font-family: 'Inter';
 font-style: normal;
@@ -18,7 +18,7 @@ line-height: 22px;
       .active {
           
        
-          color: #EF2C5A;
+          color: var(--primary-color);
         
       }
 }

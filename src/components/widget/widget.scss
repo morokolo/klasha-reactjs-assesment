@@ -4,12 +4,12 @@
   justify-content: space-between;
   min-height: 15rem;
   border-radius: 1rem;
-  border: 1px solid #000;
+  border: 1px solid  var(--black-color);
   padding: 2rem 0 0 0;
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: var(--white-color);
+    background-color:  var(--black-color);
   }
 
   .top {
@@ -31,7 +31,7 @@
         line-height: 20px;
         display: flex;
         align-items: center;
-        color: #000000;
+        color:  var(--black-color);
       }
 
     }
@@ -66,8 +66,8 @@
     justify-content:center;
     align-items: center;
     .recharts-default-tooltip {
-      background-color: white !important;
-      border-color: white !important;
+      background-color: var(--white-color) !important;
+      border-color: var(--white-color) !important;
     }
   }
 }

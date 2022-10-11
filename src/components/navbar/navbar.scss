@@ -1,10 +1,10 @@
 .navbar {
     height: 80px;
-    border-bottom: 1px solid #F1F1F1;
+    border-bottom: 1px solid var(--shade-grey-100);
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: #555;
+    color: var(--shade-black-color);
 
     .wrapper {
         width: 100%;
@@ -17,7 +17,6 @@
     }
 
     .today {
-        // border-bottom:  0.5px solid rgb(230,227,227);
         display: flex;
         align-items: center;
         padding: 3px;
@@ -34,7 +33,7 @@ letter-spacing: -0.02em;
 
 /* base/black */
 
-color: #000000;
+color:  var(--black-color);
         }
 
         // input {
@@ -74,7 +73,7 @@ letter-spacing: -0.02em;
 
 /* Black */
 
-color: #222223;
+color: var(--shade-black-color);
             }
             .icon {
                 font-size: 20px;
