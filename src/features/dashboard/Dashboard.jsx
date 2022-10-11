@@ -5,7 +5,6 @@ import Earnings from "../../components/earnings/Earnings";
 import Featured from "../../components/featured/Featured";
 import Filter from "../../components/filter/Filter";
 import Navbar from "../../components/navbar/Navbar";
-import Sidebar from "../../components/sidebar/Sidebar";
 import { Widget } from "../../components/widget/Widget";
 
 const Dashboard = () => {

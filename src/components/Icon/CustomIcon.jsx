@@ -2,7 +2,6 @@ import {
   AnalyticsIcon,
   CartIcon,
   ExchangeIcon,
-  LogoIcon,
   MarketingIcon,
   PaymentIcon,
   PaymentLinkIcon,
@@ -44,7 +43,6 @@ const IconComponent = ({ name, size = 24, color = "black" }) => {
     default:
       console.log("Invalid Input");
   }
-  //   return <PieChartIcon size={size} color={color} />;
 
   return Icon;
 };

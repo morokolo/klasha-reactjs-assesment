@@ -1,6 +1,5 @@
 import "./transactions.scss";
 import Navbar from "../../components/navbar/Navbar";
-import Sidebar from "../../components/sidebar/Sidebar";
 import TableList from "../../components/table/Table";
 
 const Transactions = () => {

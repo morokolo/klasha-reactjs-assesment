@@ -20,7 +20,7 @@ const Earnings = ({
   showAxis,
   showTooltip,
 }) => {
-  const { currency, handleSetCurrency } = useContext(NavigationContext);
+  const { currency } = useContext(NavigationContext);
   return (
     <div className="earnings">
       {date && (

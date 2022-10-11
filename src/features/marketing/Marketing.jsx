@@ -1,5 +1,4 @@
 import "./marketing.scss";
-import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 
 const Marketing = () => {

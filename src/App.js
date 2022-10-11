@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 
 import Dashboard from "./features/dashboard/Dashboard";

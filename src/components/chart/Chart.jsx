@@ -4,7 +4,6 @@ import {
   Area,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
@@ -37,7 +36,6 @@ const Chart = ({ aspect, title, showYAxis, showXAxis, showTooltip }) => {
             </linearGradient>
           </defs>
 
-          {/* <CartesianGrid strokeDasharray="3 3" className="chartGrid" /> */}
           {showXAxis && <XAxis dataKey="Total" />}
 
           {showYAxis && <YAxis />}
