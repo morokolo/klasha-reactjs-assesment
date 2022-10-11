@@ -1,27 +1,13 @@
 import "./sidebar.scss";
 import { ArrowBackIos } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import {
-  AnalyticsIcon,
-  CartIcon,
-  ExchangeIcon,
-  LogoIcon,
-  MarketingIcon,
-  PaymentIcon,
-  PaymentLinkIcon,
-  PieChartIcon,
-  TransactionIcon,
-  WalletIcon,
-} from "../../assets";
+import { LogoIcon } from "../../assets";
 
 import { Button } from "@mui/material";
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { NavigationContext } from "../../context/NavigationContext";
 import { sideMenuItems } from "./menuItems";
-import LinkItem from "./LinkItem";
 import IconComponent from "../Icon/CustomIcon";
-import CustomIcon from "../Icon/CustomIcon";
-
 const Sidebar = () => {
   const { currentLink, handleClick } = useContext(NavigationContext);
 
@@ -47,7 +33,7 @@ const Sidebar = () => {
                             }
                             onClick={() => handleClick(item.id)}
                           >
-                            <a href="#">
+                            <span>
                               <IconComponent
                                 name={item.icon}
                                 size={24}
@@ -58,7 +44,7 @@ const Sidebar = () => {
                                 }
                               />
                               <span> {item.label}</span>
-                            </a>
+                            </span>
                           </li>
                         </Link>
                       );

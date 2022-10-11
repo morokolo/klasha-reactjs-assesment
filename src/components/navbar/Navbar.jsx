@@ -1,14 +1,5 @@
 import "./navbar.scss";
-import {
-  LanguageOutlined,
-  DarkModeOutlined,
-  ChatBubbleOutlineOutlined,
-  NotificationAddOutlined,
-  FullscreenExitOutlined,
-  ListOutlined,
-  ArrowBackIos,
-  ExpandMore,
-} from "@mui/icons-material";
+import { ExpandMore } from "@mui/icons-material";
 import moment from "moment";
 
 import { styled } from "@mui/material/styles";

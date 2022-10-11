@@ -1,10 +1,4 @@
 import "./widget.scss";
-import {
-  KeyboardArrowUp,
-  PersonOutlined,
-  ShoppingCartOutlined,
-} from "@mui/icons-material";
-import Chart from "../chart/Chart";
 import { useContext } from "react";
 import { NavigationContext } from "../../context/NavigationContext";
 import { CurrencyConvertor } from "../currencyConvertor/CurrencyConvertor";

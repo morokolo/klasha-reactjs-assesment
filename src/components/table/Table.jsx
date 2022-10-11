@@ -2,18 +2,10 @@ import React, { useContext, useState, useMemo } from "react";
 import "./table.scss";
 import Pagination from "./pagination/Pagination";
 import data from "./data/mock-data.json";
-import { Button, Input, InputAdornment, Popper } from "@mui/material";
-import {
-  ArrowDownward,
-  FilterListOutlined,
-  SearchOffOutlined,
-  SearchOutlined,
-} from "@mui/icons-material";
+import { Button, Input, InputAdornment } from "@mui/material";
+import { FilterListOutlined, SearchOutlined } from "@mui/icons-material";
 
 import { NavigationContext } from "../../context/NavigationContext";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import { CurrencyConvertor } from "../currencyConvertor/CurrencyConvertor";
@@ -23,9 +15,7 @@ const options = ["Pending", "Successful"];
 const TableList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState("");
-  const [filter, setFilter] = useState("");
-  const [listOfTransactions, setListOfTransactions] = useState(data);
-  const { currency, handleSetCurrency } = useContext(NavigationContext);
+  const { currency } = useContext(NavigationContext);
 
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
@@ -39,39 +29,19 @@ const TableList = () => {
       });
       return searchResults.slice(firstPageIndex, lastPageIndex); // update the pagination on search
     }
-
-    // if(!filter) {
-    //   return data.slice(firstPageIndex, lastPageIndex);
-    // } else if(filter){
-    //   let filterResults = data.filter((item) => {
-    //     return item.status.toLowerCase().includes(search.toLowerCase())
-    //   })
-    //   return filterResults.slice(firstPageIndex, lastPageIndex); // update the pagination on search
-
-    // }
-
-    // let filterResults = data.filter((item) => {
-    //   return item.status.toLowerCase().includes(search.toLowerCase())
-    // })
-    // return filterResults.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage, search, data, filter]);
+  }, [currentPage, search]);
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [selectedIndex, setSelectedIndex] = React.useState(1);
   const open = Boolean(anchorEl);
   const handleClickListItem = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleMenuItemClick = (event, index) => {
-    //handleSetCurrency(options[index])
-    // console.log(index)
-    setFilter(options[index]);
-    //setSelectedIndex(index);
     setAnchorEl(null);
   };
 
@@ -99,7 +69,7 @@ const TableList = () => {
           <div className="filters">
             <Button
               variant="outlined"
-              className="currency-btn primary-btn right-margin-spacer"
+              className="primary-btn right-margin-spacer"
               endIcon={
                 <FilterListOutlined
                   fontSize="small"
@@ -125,7 +95,7 @@ const TableList = () => {
               ))}
             </Menu>
 
-            <Button variant="outlined" className="download-btn primary-btn">
+            <Button variant="outlined" className="primary-btn">
               Export
             </Button>
           </div>

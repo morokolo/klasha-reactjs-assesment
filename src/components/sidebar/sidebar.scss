@@ -55,11 +55,11 @@
           padding: 0.6rem 1rem;
           border-radius: 0.6rem;
           &:hover {
-            a {
+            span {
               color: var(--primary-color);
             }
           }
-          a {
+          span {
             text-decoration: none;
             display: flex;
             gap: 1rem;
@@ -72,7 +72,7 @@
           }
         }
         .active {
-          a {
+          span {
             color: var(--primary-color);
           }
         }

@@ -1,21 +1,5 @@
 .filter {
-  .currency-btn {
-    border: 1px solid var(--black-color);
-    color: var(--black-color);
-    text-transform: none;
-  }
-
-  .day-filter {
-    color: var(--black-color);
-    text-transform: none;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 22px;
-  }
-
   .active {
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
   }
 }

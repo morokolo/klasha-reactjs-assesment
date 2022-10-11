@@ -9,7 +9,9 @@ const Featured = () => {
       </div>
 
       <div className="bottom">
-        <Button variant="contained">Send a Wire </Button>
+        <Button variant="contained" className="secondary-btn">
+          Send a Wire{" "}
+        </Button>
       </div>
     </div>
   );

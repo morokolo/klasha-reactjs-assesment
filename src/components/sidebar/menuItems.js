@@ -1,16 +1,3 @@
-import {
-  AnalyticsIcon,
-  CartIcon,
-  ExchangeIcon,
-  LogoIcon,
-  MarketingIcon,
-  PaymentIcon,
-  PaymentLinkIcon,
-  PieChartIcon,
-  TransactionIcon,
-  WalletIcon,
-} from "../../assets";
-
 export const sideMenuItems = [
   {
     groupTitle: "Main pages",

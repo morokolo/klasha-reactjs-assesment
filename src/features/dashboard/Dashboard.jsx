@@ -149,7 +149,7 @@ const Dashboard = () => {
               <div className="download-group">
                 <Button
                   variant="outlined"
-                  className="download-btn"
+                  className="primary-btn"
                   endIcon={<ArrowDownward fontSize="small" />}
                 >
                   Download report
