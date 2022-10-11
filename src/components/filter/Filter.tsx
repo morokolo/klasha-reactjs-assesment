@@ -11,7 +11,7 @@ import Menu from "@mui/material/Menu";
 const options = ["USD", "NN"];
 
 const Filter = () => {
-  const { currency, handleSetCurrency } = useContext(NavigationContext);
+  const { currency, handleSetCurrency }: any = useContext(NavigationContext);
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);

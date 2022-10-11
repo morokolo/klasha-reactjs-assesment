@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { NavigationContext } from "../../context/NavigationContext";
 import { CurrencyConvertor } from "../currencyConvertor/CurrencyConvertor";
 export const Widget = ({ type }) => {
-  const { currency } = useContext(NavigationContext);
+  const { currency }: any = useContext(NavigationContext);
 
   return (
     <div className="widget">

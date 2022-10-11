@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   AnalyticsIcon,
   CartIcon,
@@ -10,8 +12,14 @@ import {
   WalletIcon,
 } from "../../assets";
 
-const IconComponent = ({ name, size = 24, color = "black" }) => {
-  let Icon = "";
+type Props = {
+  name: string;
+  size: number;
+  color: string;
+};
+
+const IconComponent = ({ name, size = 24, color = "black" }: Props) => {
+  let Icon: any = "";
   switch (name) {
     case "dashboard":
       Icon = <PieChartIcon size={size} color={color} />;

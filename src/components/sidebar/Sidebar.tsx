@@ -9,7 +9,7 @@ import { NavigationContext } from "../../context/NavigationContext";
 import { sideMenuItems } from "./menuItems";
 import IconComponent from "../Icon/CustomIcon";
 const Sidebar = () => {
-  const { currentLink, handleClick } = useContext(NavigationContext);
+  const { currentLink, handleClick }: any = useContext(NavigationContext);
 
   return (
     <>

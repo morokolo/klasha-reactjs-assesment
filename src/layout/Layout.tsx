@@ -2,9 +2,11 @@ import React from "react";
 import Sidebar from "../components/sidebar/Sidebar";
 import "./layout.scss";
 
-const Layout = (props) => {
-  const { children } = props;
+type Props = {
+  children: JSX.Element;
+};
 
+const Layout = ({ children }: Props) => {
   return (
     <div className="layout">
       <aside className="aside">

@@ -1,6 +1,11 @@
 import React from "react";
 
-export const CurrencyConvertor = ({ amount, currency }) => {
+type Props = {
+  amount: number;
+  currency: string;
+};
+
+export const CurrencyConvertor = ({ amount, currency }: Props) => {
   return (
     <div>
       {currency === "USD" && <span> &#36; {amount.toFixed(2)}</span>}

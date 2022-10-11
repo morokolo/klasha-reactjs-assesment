@@ -1,3 +1,4 @@
+import React from "react";
 import "./earnings.scss";
 import {
   AreaChart,
@@ -11,6 +12,18 @@ import { useContext } from "react";
 import { NavigationContext } from "../../context/NavigationContext";
 import { CurrencyConvertor } from "../currencyConvertor/CurrencyConvertor";
 
+type Props = {
+  aspect: number;
+  data: Array<{
+    data: number;
+  }>;
+  date: string;
+  title: string;
+  amount: number;
+  showAxis: boolean;
+  showTooltip: boolean;
+};
+
 const Earnings = ({
   aspect,
   data,
@@ -19,8 +32,8 @@ const Earnings = ({
   amount,
   showAxis,
   showTooltip,
-}) => {
-  const { currency } = useContext(NavigationContext);
+}: Props) => {
+  const { currency }: any = useContext(NavigationContext);
   return (
     <div className="earnings">
       {date && (
