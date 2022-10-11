@@ -1,15 +1,14 @@
 @font-face {
-    font-family: "General Sans";
-    src: local("GeneralSans"),
-      url("./assets/fonts/GeneralSans-Variable.ttf") format("truetype");
-  }
+  font-family: "General Sans";
+  src: local("GeneralSans"),
+    url("./assets/fonts/GeneralSans-Variable.ttf") format("truetype");
+}
 
-  @font-face {
-    font-family: "Inter";
-    src: local("Inter"),
-      url("./assets/fonts/Inter-Regular.ttf") format("truetype");
-  }
-
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"),
+    url("./assets/fonts/Inter-Regular.ttf") format("truetype");
+}
 
 * {
   margin: 0;
@@ -19,21 +18,61 @@
 
 body {
   font-family: "General Sans";
-  background-color: white;
+  background-color: var(--white-color);
+  --primary-color: #ef2c5a;
+  --shade-black-color: #0a0a0a;
+  --shade-black-color-700: #484848;
+  --shade-black-color-400: #8d8d8d;
+  --shade-grey-color-700: #565c69;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --shade-grey-100: #ededed;
+  --grey-100: #f0f0f0;
+  --klasha-white: #fffbf7;
+  --shade-grey-50: #f7f7f7;
+  --shade-black-600: #5f5f5f;
+  --shade-grey-300: #a39d9e;
+  --shade-grey-200: #e8e8e8;
 }
 
 .heading {
-  font-family: 'General Sans';
+  font-family: "General Sans";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 32px;
   letter-spacing: -0.02em;
-  color: #1A1A1A;
+  color: var(--shade-black-color);
 }
 
 a {
   text-decoration: none;
 }
 
+.primary-btn {
+  border: 1px solid var(--shade-black-color) !important;
+  border-radius: 8px !important;
+  color: var(--shade-black-color) !important;
+}
 
+.secondary-btn {
+  background-color: var(--black-color) !important;
+  text-transform: none !important;
+}
+.tertiary-btn {
+  color: var(--black-color) !important;
+  text-transform: none !important;
+  font-family: "Inter" !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 22px !important;
+}
+
+.right-margin-spacer {
+  margin-right: 0.6rem !important;
+}
+
+.left-margin-spacer {
+  margin-left: 0.6rem !important;
+}
