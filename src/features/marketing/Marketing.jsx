@@ -6,7 +6,6 @@ const Marketing = () => {
     return (
     <>
         <div className="marketing">
-            <Sidebar />
             <Navbar />
             <div className="grid">
                 <div className="info">

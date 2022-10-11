@@ -6,7 +6,6 @@ const Balances = () => {
     return (
         <>
             <div className="balances">
-                <Sidebar />
                 <Navbar />
                 <div className="grid">
                     <div className="info">

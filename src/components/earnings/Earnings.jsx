@@ -1,164 +1,12 @@
 
 import './earnings.scss';
 import { AreaChart, Area, Tooltip, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import { useContext } from 'react';
+import { NavigationContext } from '../../context/NavigationContext';
+import { CurrencyConvertor } from '../currencyConvertor/CurrencyConvertor';
 
-// const data = [
-//   { data: 4500 },
-//   {
-//     data: 5000,
-//   },
-//   {
-//     data: 5700,
-//   },
-//   {
-//     data: 3400,
-//   },
-//   {
-//     data: 7000,
-//   },
-//   {
-//     data: 5300,
-//   },
-//   {
-//     data: 5800,
-//   },
-//   {
-//     data: 8000,
-//   },
-//   {
-//     data: 6300,
-//   },
-//   {
-//     data: 6300,
-//   },
-//   {
-//     data: 6300,
-//   },
-//   {
-//     data: 10680,
-//   },
-//   {
-//     data: 10680,
-//   },
-//   {
-//     data: 10680,
-//   },
-//   {
-//     data: 10680,
-//   },
-//   {
-//     data: 5500,
-//   },
-//   {
-//     data: 5500,
-//   },
-//   {
-//     data: 5500,
-//   },
-//   {
-//     data: 7680,
-//   },
-//   {
-//     data: 7680,
-//   },
-//   {
-//     data: 7680,
-//   },
-//   {
-//     data: 7680,
-//   },
-//   {
-//     data: 16000,
-//   },
-//   {
-//     data: 15500,
-//   },
-//   {
-//     data: 17700,
-//   },
-//   {
-//     data: 17700,
-//   },
-//   {
-//     data: 17700,
-//   },
-//   {
-//     data: 17700,
-//   },
-//   {
-//     data: 17700,
-//   },
-//   {
-//     data: 7000,
-//   },
-//   {
-//     data: 7300,
-//   },
-//   {
-//     data: 7500,
-//   },
-//   {
-//     data: 7700,
-//   },
-//   {
-//     data: 14000,
-//   },
-//   {
-//     data: 14000,
-//   },
-//   {
-//     data: 14000,
-//   },
-
-//   {
-//     data: 14000,
-//   },
-//   {
-//     data: 14000,
-//   },
-//   {
-//     data: 14000,
-//   },
-//   {
-//     data: 14000,
-//   },
-//   {
-//     data: 13000,
-//   },
-//   {
-//     data: 12000,
-//   },
-//   {
-//     data: 10000,
-//   },
-//   {
-//     data: 10000,
-//   },
-//   {
-//     data: 10000,
-//   },
-//   {
-//     data: 10000,
-//   },
-//   {
-//     data: 10000,
-//   },
-//   {
-//     data: 10000,
-//   },
-
-//   {
-//     data: 10000,
-//   },
-//   {
-//     data: 10000,
-//   },
-//   {
-//     data: 10000,
-//   },
-// ];
-
-const Earnings = ({aspect, data, date, title, amount,showAxis}) => {
+const Earnings = ({aspect, data, date, title, amount,showAxis, showTooltip}) => {
+  const {currency, handleSetCurrency} = useContext((NavigationContext))
   return (
     <div className="earnings">
       {
@@ -188,7 +36,11 @@ const Earnings = ({aspect, data, date, title, amount,showAxis}) => {
               }
            
 
-          
+          {
+            showTooltip && (
+              <Tooltip cursor={false} />
+            )
+          }
             {/* <Tooltip cursor={false} /> */}
             <Area
               animationBegin={800}
@@ -214,7 +66,8 @@ const Earnings = ({aspect, data, date, title, amount,showAxis}) => {
          
          {
           amount && (
-            <h1 className='balance'>&#8358;{amount}</h1>
+            <h1 className='balance'><CurrencyConvertor amount={amount} currency ={currency} /></h1>
+            
           )
          }
         </div>

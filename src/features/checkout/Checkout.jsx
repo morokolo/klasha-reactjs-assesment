@@ -6,7 +6,6 @@ const Checkout = () => {
     return (
         <>
             <div className="checkout">
-                <Sidebar />
                 <Navbar />
                 <div className="grid">
                     <div className="info">

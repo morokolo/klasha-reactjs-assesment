@@ -6,7 +6,6 @@ const PaymentLinks = () => {
     return (
     <>
         <div className="paymentLinks">
-            <Sidebar />
             <Navbar />
             <div className="grid">
                 <div className="info">

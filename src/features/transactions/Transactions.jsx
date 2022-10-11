@@ -7,15 +7,16 @@ const Transactions = () => {
     return (
         <>
             <div className="transactions">
-                <Sidebar />
                 <Navbar />
-                <div className="grid">
+                <div className="transactions-container">
+                <div className="grid heading-section">
                     <div className="info">
                         <h1 className='heading'>Transaction history</h1>
                     </div>
                 </div>
-
+               
                 <TableList />
+                </div>
             </div>
         </>
     )

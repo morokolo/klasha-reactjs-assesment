@@ -6,7 +6,6 @@ const ExchangeRates = () => {
     return (
     <>
         <div className="exchangeRates">
-            <Sidebar />
             <Navbar />
             <div className="grid">
                 <div className="info">

@@ -6,7 +6,6 @@ const Analytics = () => {
     return (
         <>
             <div className="analytics">
-                <Sidebar />
                 <Navbar />
                 <div className="grid">
                     <div className="info">

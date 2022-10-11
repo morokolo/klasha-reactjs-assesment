@@ -1,98 +1,174 @@
-import './table.scss'
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 
+import React, { useContext,useState, useMemo } from 'react';
+import './table.scss';
+import Pagination from './pagination/Pagination';
+import data from './data/mock-data.json';
+import { Button, Input, InputAdornment, Popper } from '@mui/material';
+import { ArrowDownward, FilterListOutlined, SearchOffOutlined, SearchOutlined } from '@mui/icons-material';
+
+import { NavigationContext } from '../../context/NavigationContext';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
+import { CurrencyConvertor } from '../currencyConvertor/CurrencyConvertor';
+
+let PageSize = 4;
+const options = [
+  'Pending',
+  'Successful'
+];
 const TableList = () => {
-    const rows = [
-        {
-          id: 1143155,
-          product: "Acer Nitro 5",
-          img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-          customer: "John Smith",
-          date: "1 March",
-          amount: 785,
-          method: "Cash on Delivery",
-          status: "Approved",
-        },
-        {
-          id: 2235235,
-          product: "Playstation 5",
-          img: "https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg",
-          customer: "Michael Doe",
-          date: "1 March",
-          amount: 900,
-          method: "Online Payment",
-          status: "Pending",
-        },
-        {
-          id: 2342353,
-          product: "Redragon S101",
-          img: "https://m.media-amazon.com/images/I/71kr3WAj1FL._AC_UY327_FMwebp_QL65_.jpg",
-          customer: "John Smith",
-          date: "1 March",
-          amount: 35,
-          method: "Cash on Delivery",
-          status: "Pending",
-        },
-        {
-          id: 2357741,
-          product: "Razer Blade 15",
-          img: "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg",
-          customer: "Jane Smith",
-          date: "1 March",
-          amount: 920,
-          method: "Online",
-          status: "Approved",
-        },
-        {
-          id: 2342355,
-          product: "ASUS ROG Strix",
-          img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
-          customer: "Harold Carol",
-          date: "1 March",
-          amount: 2000,
-          method: "Online",
-          status: "Pending",
-        },
-      ];
+
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [search, setSearch] = useState('');
+  const [filter, setFilter] = useState('');
+  const [listOfTransactions, setListOfTransactions] = useState(data)
+  const {currency, handleSetCurrency} = useContext((NavigationContext))
+
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * PageSize;
+    const lastPageIndex = firstPageIndex + PageSize;
+  
+    if(!search) {
+      return data.slice(firstPageIndex, lastPageIndex);
+    } else if(search) {
+      let searchResults = data.filter((item) => {
+        return item.customer_name.toLowerCase().includes(search.toLowerCase())
+      })
+      return searchResults.slice(firstPageIndex, lastPageIndex); // update the pagination on search
+  
+    }
+
+    // if(!filter) {
+    //   return data.slice(firstPageIndex, lastPageIndex);
+    // } else if(filter){
+    //   let filterResults = data.filter((item) => {
+    //     return item.status.toLowerCase().includes(search.toLowerCase())
+    //   })
+    //   return filterResults.slice(firstPageIndex, lastPageIndex); // update the pagination on search
+  
+    // }
+
+
     
+    // let filterResults = data.filter((item) => {
+    //   return item.status.toLowerCase().includes(search.toLowerCase())
+    // })
+    // return filterResults.slice(firstPageIndex, lastPageIndex); 
+
+
+  }, [currentPage,search,data,filter]);
+
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const open = Boolean(anchorEl);
+  const handleClickListItem = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuItemClick = (event, index) => {
+    //handleSetCurrency(options[index])
+    // console.log(index)
+    setFilter(options[index])
+    //setSelectedIndex(index);
+    setAnchorEl(null);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+
+
   return (
-    <TableContainer component={Paper} className="table">
-    <Table sx={{ minWidth: 650 }} aria-label="simple table">
-      <TableHead>
-        <TableRow>
-          <TableCell className="tableCell">Tracking ID</TableCell>
-          <TableCell className="tableCell">Product</TableCell>
-          <TableCell className="tableCell">Customer</TableCell>
-          <TableCell className="tableCell">Date</TableCell>
-          <TableCell className="tableCell">Amount</TableCell>
-          <TableCell className="tableCell">Payment Method</TableCell>
-          <TableCell className="tableCell">Status</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {rows.map((row) => (
-          <TableRow key={row.id}>
-            <TableCell className="tableCell">{row.customer}</TableCell>
-            <TableCell className="tableCell">{row.date}</TableCell>
-            <TableCell className="tableCell">{row.date}</TableCell>
-            <TableCell className="tableCell">{row.date}</TableCell>
-            <TableCell className="tableCell">{row.amount}</TableCell>
-            <TableCell className="tableCell">{row.method}</TableCell>
-            <TableCell className="tableCell">
-              <span className={`status ${row.status}`}>{row.status}</span>
-            </TableCell>
-          </TableRow>
+    <div className='table'>
+      
+      <div className='filter-section'>
+        <div className='left'> 
+        <Input
+        id="search" type="text" onChange={handleSearch} placeholder='Search'
+        endAdornment={
+          <InputAdornment position="start">
+            <SearchOutlined />
+          </InputAdornment>
+        }
+  />
+
+        </div>
+        <div className='right'> 
+          <div className='filters'>
+    
+          <Button variant="outlined" className='currency-btn primary-btn right-margin-spacer' endIcon={<FilterListOutlined fontSize="small"   onClick={handleClickListItem}/>}>Filter</Button>
+      <Menu
+        id="lock-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+      >
+        {options.map((option, index) => (
+          <MenuItem
+            key={option}
+            onClick={(event) => handleMenuItemClick(event, index)}
+          >
+            {option}
+          </MenuItem>
         ))}
-      </TableBody>
-    </Table>
-  </TableContainer>
-  )
+      </Menu>
+
+
+          
+          <Button variant="outlined" className='download-btn primary-btn'>Export</Button>
+          </div>
+        </div>
+      </div>
+     
+      <table>
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Source</th>
+            <th>Customer Name</th>
+            <th>Customer email</th>
+            <th>Amount</th>
+            <th>Request date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {currentTableData.map(item => {
+            return (
+              <tr>
+                <td>{item.transaction_id}</td>
+                <td>{item.source}</td>
+                <td>{item.customer_name}</td>
+                <td>{item.customer_email}</td>
+                <td>
+                <CurrencyConvertor amount={item.amount} currency ={currency} />
+                </td>
+                <td>{item.request_date}</td>
+                <td>{item.status}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <Pagination
+        className="pagination-bar"
+        currentPage={currentPage}
+        totalCount={data.length}
+        pageSize={PageSize}
+        onPageChange={page => setCurrentPage(page)}
+      />
+    </div>
+  );
 }
 
 export default TableList

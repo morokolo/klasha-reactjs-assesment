@@ -15,7 +15,7 @@ const Dashboard = () => {
             datum: '20 Aug'
         },
         {
-            data: 5000,
+            data: 15000,
             datum: '21 Aug'
         },
         {
@@ -45,21 +45,24 @@ const Dashboard = () => {
             amount: 1652.50,
             showAxis: false,
             series: [
-                { data: 4500 },
+                { data: 100000 },
                 {
-                    data: 5000,
+                    data: 500000,
                 },
                 {
-                    data: 5700,
+                    data: 500000,
                 },
                 {
-                    data: 3400,
+                    data: 300000,
                 },
                 {
-                    data: 7000,
+                    data: 300400,
                 },
                 {
-                    data: 5300,
+                    data: 140000,
+                },
+                {
+                    data: 55300,
                 }
             ]
         },
@@ -67,7 +70,7 @@ const Dashboard = () => {
             id:2,
             date: '24 Aug - 01 Sep 21',
             tile: 'This month',
-            amount: 1652.50,
+            amount: 1952.50,
             showAxis: false,
             series: [
                 {
@@ -92,7 +95,7 @@ const Dashboard = () => {
             id:3,
             date: '24 Aug - 01 Sep 21',
             tile: 'Last month',
-            amount: 1652.50,
+            amount: 7652.50,
             showAxis: false,
             series: [
                 { data: 70500 },
@@ -116,8 +119,6 @@ const Dashboard = () => {
     ]
     return (
         <div className='home'>
-
-            <Sidebar />
 
             <div className="dashboard">
                 <Navbar />
@@ -152,7 +153,7 @@ const Dashboard = () => {
 
                     <div className="statistics">
                         <div className="left">
-                            <Earnings aspect={4/1} showAxis={true} data={featuredData}/>
+                            <Earnings aspect={4/1} showAxis={true} data={featuredData} showTooltip={true}/>
                         </div>
                         <div className="right">
                             <Featured />

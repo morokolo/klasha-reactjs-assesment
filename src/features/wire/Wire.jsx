@@ -6,7 +6,6 @@ const Wire = () => {
     return (
         <>
             <div className="wire">
-                <Sidebar />
                 <Navbar />
                 <div className="grid">
                     <div className="info">
