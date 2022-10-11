@@ -1,5 +1,5 @@
-.sidebar{
-    position: fixed;
+.sidebar {
+  position: fixed;
   left: 0;
   background-color: var(--klasha-white);
   height: 100vh;
@@ -25,12 +25,11 @@
       align-items: center;
       gap: 2rem;
       svg {
-       
         font-size: 2rem;
       }
       span {
         font-size: 2rem;
-  
+
         font-family: "Permanent Marker", cursive;
       }
     }
@@ -42,8 +41,8 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        .title{
-          font-family: 'General Sans';
+        .title {
+          font-family: "General Sans";
           font-style: normal;
           font-weight: 500;
           font-size: 16px;
@@ -56,26 +55,23 @@
           padding: 0.6rem 1rem;
           border-radius: 0.6rem;
           &:hover {
-           
             a {
               color: var(--primary-color);
-
             }
           }
           a {
             text-decoration: none;
             display: flex;
             gap: 1rem;
-            font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 24px;
-color:  var(--black-color);
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--black-color);
           }
         }
         .active {
-          
           a {
             color: var(--primary-color);
           }
@@ -85,30 +81,29 @@ color:  var(--black-color);
   }
 
   .bottom {
-      display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;// fix with flex
-
-    Button {
-      font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 16px;
-    /* identical to box height, or 133% */
-
     display: flex;
     align-items: center;
-    text-align: center;
-    letter-spacing: -0.02em;
-    text-transform: none;
-    /* Brand/Klasha Black */
+    justify-content: center;
+    margin-bottom: 20px; // fix with flex
 
-    color: var(--black-color);
-    border: 1px solid var(--black-color);
-    border-radius: 6px;
+    Button {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      /* identical to box height, or 133% */
+
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: -0.02em;
+      text-transform: none;
+      /* Brand/Klasha Black */
+
+      color: var(--black-color);
+      border: 1px solid var(--black-color);
+      border-radius: 6px;
     }
   }
-
 }

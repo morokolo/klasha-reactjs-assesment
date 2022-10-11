@@ -1,22 +1,20 @@
-import './balances.scss';
+import "./balances.scss";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
 
 const Balances = () => {
-    return (
-        <>
-            <div className="balances">
-                <Navbar />
-                <div className="grid">
-                    <div className="info">
-                        <h1 className='heading'>Exchange Rates</h1>
-                    </div>
-                </div>
+  return (
+    <>
+      <div className="balances">
+        <Navbar />
+        <div className="grid">
+          <div className="info">
+            <h1 className="heading">Exchange Rates</h1>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 
-
-            </div>
-        </>
-    )
-}
-
-export default Balances
+export default Balances;
