@@ -11,6 +11,7 @@ import {
 import { useContext } from "react";
 import { NavigationContext } from "../../context/NavigationContext";
 import { CurrencyConvertor } from "../currencyConvertor/CurrencyConvertor";
+import CustomTooltip from "./customTooltip";
 
 type Props = {
   aspect: number;
@@ -35,7 +36,7 @@ const Earnings = ({
 }: Props) => {
   const { currency }: any = useContext(NavigationContext);
   return (
-    <div className="earnings">
+    <div className={showTooltip ? "no-hover-earnings" : "earnings"}>
       {date && (
         <div className="top">
           <div className="info">
@@ -58,8 +59,18 @@ const Earnings = ({
               </>
             )}
 
-            {showTooltip && <Tooltip cursor={false} />}
-            {/* <Tooltip cursor={false} /> */}
+            {showTooltip && (
+              <Tooltip
+                content={
+                  <CustomTooltip active={true} payload={data} label="test" />
+                }
+                cursor={true}
+                wrapperStyle={{
+                  outline: "none",
+                }}
+              />
+            )}
+
             <Area
               animationBegin={800}
               animationDuration={2000}
