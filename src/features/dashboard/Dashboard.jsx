@@ -162,7 +162,7 @@ const Dashboard = () => {
           <div className="statistics">
             <div className="left">
               <Earnings
-                aspect={4 / 1}
+                aspect={2 / 1}
                 showAxis={true}
                 data={featuredData}
                 showTooltip={true}
